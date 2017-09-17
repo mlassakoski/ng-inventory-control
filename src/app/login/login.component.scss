@@ -1,4 +1,11 @@
 .login-box {
-  width: 40rem;
+  width: 25rem;
   margin: 0 auto;
+  padding-top: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .login-box {
+    width: 40rem;
+  }
 }
