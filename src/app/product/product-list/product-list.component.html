@@ -1,24 +1,31 @@
 <div class="table-list">
-  <h1 class="center">Listagem de Produtos</h1>
+  <h1 class="center">Product List</h1>
 
   <table class="striped">
     <thead>
-      <tr>
-        <th>Código</th>
-        <th>Nome</th>
-        <th>Estoque</th>
-        <th>Preço Total</th>
-        <th>Preço Un</th>
+      <tr class="row">
+        <th >Code</th>
+        <th>Name</th>
+        <th>Stock</th>
+        <th>Price</th>
+        <th>Total Price</th>
+        <th>Edit</th>
+        <th>remove</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let product of products">
+        <td>{{product?.code}}</td>
+        <td>{{product?.name}}</td>
+        <td>{{product?.stock}}</td>
+        <td>{{product?.price}}</td>
+        <td>{{getTotalPrice(product)}}</td>
+        <td width="40px"><a [routerLink]="['/new-product', product?.id]"><i class="material-icons">edit</i></a></td>
+        <td width="40px"><a (click)="remove(product?.id)"><i class="material-icons">delete</i></a></td>
       </tr>
     </tbody>
   </table>
+  <br />
+  <a [routerLink]="['/new-product']" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">add</i></a>
+
 </div>

@@ -11,6 +11,7 @@ import { ProductFormComponent } from './product/product-form/product-form.compon
     { path: '', component: HomeComponent },
     { path: 'list-product', component: ProductListComponent },
     { path: 'new-product', component: ProductFormComponent },
+    { path: 'new-product/:id', component: ProductFormComponent },
     { path: '**', redirectTo: '' }
   ])],
   exports: [RouterModule]

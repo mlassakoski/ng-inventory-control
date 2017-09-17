@@ -1,34 +1,41 @@
 <div class="container">
-  <h2 class="center">Cadastro de produtos</h2>
+  <h2 class="center">Add new Product</h2>
 
   <div class="row">
-    <form class="col s12">
+    <form  #f="ngForm" (ngSubmit)="onSubmit(f)" class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate" />
-          <label for="first_name">Nome</label>
+          <input id="name" type="text" name="name" [(ngModel)]="product.name" class="validate" />
+          <label for="name">Name</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate" />
-          <label for="last_name">Código</label>
+          <input id="code" name="code" type="text" [(ngModel)]="product.code" class="validate" />
+          <label for="code">Code</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Descrição</label>
+          <textarea id="description" name="description" [(ngModel)]="product.description" class="materialize-textarea"></textarea>
+          <label for="description">Description</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate" />
-          <label for="last_name">Preço</label>
+          <input id="price" name="price" type="text" [(ngModel)]="product.price" class="validate" />
+          <label for="price">Price</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
+
+      <div>
+        <button [routerLink]="['/list-product']" class="btn waves-effect waves-light right" type="submit" name="submit">Submit
           <i class="material-icons right">send</i>
         </button>
+
+        <button [routerLink]="['/list-product']" class="btn waves-effect waves-light right" name="cancel">Cancel
+            <i class="material-icons left">cancel</i>
+          </button>
+      </div>
 
     </form>
   </div>

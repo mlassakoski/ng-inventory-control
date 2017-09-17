@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from './../product.service';
+import { Product } from './Iproduct';
 
 @Component({
   selector: 'app-product-list',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor() { }
+  public products: Product[];
+
+  constructor(private _service: ProductService) { }
 
   ngOnInit() {
+    this.products = this._service.getProductList();
   }
 
+  getTotalPrice(product: Product) {
+    return product.price * product.stock;
+  }
+
+  remove(id: number) {
+    this._service.remove(id);
+    this.products = this._service.getProductList();
+  }
 }
