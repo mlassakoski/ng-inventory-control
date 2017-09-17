@@ -8,12 +8,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductModule } from './product/product.module';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guard/auth.guard';
+import { AuthService } from './login/auth.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +28,10 @@ import { ProductModule } from './product/product.module';
     AppRoutingModule,
     ProductModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

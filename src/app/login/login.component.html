@@ -1,0 +1,35 @@
+<div class="login-box">
+  <h2 class="center-align">Login</h2>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input [(ngModel)]="user.email" id="email" name="email" type="email" class="validate" />
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input [(ngModel)]="user.password" id="password" name="password" type="password" class="validate" />
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <p>
+            <input type="checkbox" id="remember">
+            <label for="remember">Remember me</label>
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <div class="row">
+        <div class="col m12">
+          <p class="right-align">
+            <button (click)="login()" class="btn btn-large waves-effect waves-light" type="button" name="action">Login</button>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
