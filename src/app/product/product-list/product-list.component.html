@@ -4,8 +4,9 @@
   <table class="striped">
     <thead>
       <tr class="row">
-        <th >Code</th>
+        <th>Code</th>
         <th>Name</th>
+        <th>Description</th>
         <th>Stock</th>
         <th>Price</th>
         <th>Total Price</th>
@@ -17,6 +18,7 @@
       <tr *ngFor="let product of products">
         <td>{{product?.code}}</td>
         <td>{{product?.name}}</td>
+        <td>{{product?.description}}</td>
         <td>{{product?.stock}}</td>
         <td>{{product?.price}}</td>
         <td>{{getTotalPrice(product)}}</td>
