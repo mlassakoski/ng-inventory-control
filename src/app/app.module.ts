@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app.routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductModule } from './product/product.module';
 
@@ -14,7 +13,6 @@ import { ProductModule } from './product/product.module';
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent,
     HeaderComponent,
   ],
   imports: [
