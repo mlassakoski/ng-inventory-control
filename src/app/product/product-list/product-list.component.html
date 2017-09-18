@@ -4,9 +4,9 @@
   <table class="striped">
     <thead>
       <tr class="row">
-        <th>Code</th>
+        <th class="hide-on-small-only">Code</th>
         <th>Name</th>
-        <th>Description</th>
+        <th class="hide-on-small-only">Description</th>
         <th>Stock</th>
         <th>Price</th>
         <th>Total Price</th>
@@ -16,14 +16,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of products">
-        <td>{{product?.code}}</td>
+        <td class="hide-on-small-only">{{product?.code}}</td>
         <td>{{product?.name}}</td>
-        <td>{{product?.description}}</td>
+        <td class="hide-on-small-only">{{product?.description}}</td>
         <td>{{product?.stock}}</td>
         <td>{{product?.price}}</td>
         <td>{{getTotalPrice(product)}}</td>
-        <td width="40px"><a [routerLink]="['/new-product', product?.id]"><i class="material-icons">edit</i></a></td>
-        <td width="40px"><a (click)="remove(product?.id)"><i class="material-icons">delete</i></a></td>
+        <td class="list-btn"><a [routerLink]="['/dashboard/new-product', product?.id]"><i class="material-icons">edit</i></a></td>
+        <td class="list-btn"><a (click)="remove(product?.id)"><i class="material-icons">delete</i></a></td>
       </tr>
     </tbody>
   </table>

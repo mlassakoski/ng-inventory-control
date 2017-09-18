@@ -4,7 +4,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
-import { Product } from './product-list/Iproduct';
+import { Product } from './product-list/product';
 import { Observable } from 'rxjs/Rx';
 import * as _ from 'lodash';
 
@@ -21,12 +21,18 @@ export class ProductService {
     this.initList();
   }
 
-  getProductList() {
+  getProductList(): Product[] {
     return this._products;
   }
 
   getProduct(id: number) {
-    return _.find(this._products, { 'id': 1 });
+    for (let i = 0; i < this._products.length; i++) {
+      const product = this._products[i];
+      if (product.id == id) {
+        return product;
+      }
+    }
+    return null;
   }
 
   update(product: Product) {

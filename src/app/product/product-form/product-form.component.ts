@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 import { ProductService } from './../product.service';
-import { Product } from './../product-list/Iproduct';
+import { Product } from './../product-list/product';
 
 @Component({
   selector: 'app-product-form',
@@ -17,16 +17,18 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    private _service: ProductService) {
-  }
+    private _service: ProductService) { }
 
   ngOnInit() {
+    this.product = new Product();
+    const self = this;
     this._subscription = this._route.params.subscribe(
       (params: any) => {
-        const id = params['id'];
+        const id: number = params['id'];
 
-        this.product = this._service.getProduct(id);
-
+        if (id) {
+          self.product = self._service.getProduct(id);
+        }
       }
     );
   }
