@@ -1,8 +1,12 @@
 <nav>
   <ul id="slide-out" class="side-nav fixed">
-    <div class="nav-img-box">
-      <img class="circle responsive-img" src="/assets/mlassakoski.png">
-    </div>
+    <li>
+      <div class="logo">
+        <a [routerLink]="['/dashboard']">
+          <img src="/assets/ng2-icon.png">
+        </a>
+      </div>
+    </li>
     <li><a [routerLink]="['/dashboard/new-product']">Add Product</a></li>
     <li><a [routerLink]="['/dashboard/list-product']">Products</a></li>
   </ul>
@@ -10,7 +14,21 @@
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
     <ul class="right">
-      <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+      <li class="collection-item avatar">
+        <a class="dropdown-button" data-activates="dropdown">
+          <div class="valign-wrapper">
+            <img src="/assets/mlassakoski.png" alt="" width="40" class="circle">
+            <i class="material-icons right">arrow_drop_down</i>
+          </div>
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
+<ul id="dropdown" class="dropdown-content">
+  <li><a [routerLink]="['/dashboard/profile']">Profile</a></li>
+  <li class="divider"></li>
+  <li><a>Logout
+      <i class="material-icons">power_settings_new</i></a>
+  </li>
+</ul>

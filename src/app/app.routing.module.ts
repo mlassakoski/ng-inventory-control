@@ -9,6 +9,7 @@ import { ProductFormComponent } from './product/product-form/product-form.compon
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ModuleWithProviders } from '@angular/core';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [RouterModule.forRoot([
@@ -16,9 +17,10 @@ import { ModuleWithProviders } from '@angular/core';
     {
       path: 'dashboard', component: DashboardComponent,
       canLoad: [AuthGuard],
-      canActivateChild: [AuthGuard],
+      // canActivateChild: [AuthGuard],
       children: [
         { path: '', component: HomeComponent },
+        { path: 'profile', component: ProfileComponent },
         { path: 'list-product', component: ProductListComponent },
         { path: 'new-product', component: ProductFormComponent },
         { path: 'new-product/:id', component: ProductFormComponent },

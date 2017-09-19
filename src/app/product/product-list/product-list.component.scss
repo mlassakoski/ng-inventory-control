@@ -7,3 +7,16 @@
   width: 1rem;
   text-align: center;
 }
+
+table {
+  tbody {
+    td a {
+      color: #26a69a;
+    }
+  }
+}
+.pagination {
+  .active {
+    background: #26a69a;
+  }
+}

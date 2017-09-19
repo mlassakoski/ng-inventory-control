@@ -15,6 +15,15 @@ export class HeaderComponent implements OnInit {
       edge: 'left',
       closeOnClick: true
     });
+
+    $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      hover: false,
+      belowOrigin: true,
+      alignment: 'right'
+    }
+  );
   }
 
 }
