@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../login/auth.service';
 declare var $: any;
 
 @Component({
@@ -8,7 +9,7 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _authService: AuthService) { }
 
   ngOnInit() {
     $('.button-collapse').sideNav({
@@ -26,4 +27,7 @@ export class HeaderComponent implements OnInit {
   );
   }
 
+  logout() {
+    this._authService.logout();
+  }
 }

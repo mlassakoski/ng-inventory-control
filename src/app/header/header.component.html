@@ -28,7 +28,7 @@
 <ul id="dropdown" class="dropdown-content">
   <li><a [routerLink]="['/dashboard/profile']">Profile</a></li>
   <li class="divider"></li>
-  <li><a>Logout
-      <i class="material-icons">power_settings_new</i></a>
+  <li (click)="logout()">
+    <a>Logout<i class="material-icons">power_settings_new</i></a>
   </li>
 </ul>

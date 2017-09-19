@@ -23,6 +23,11 @@ export class AuthService {
     }
   }
 
+  logout() {
+    this._isLogged = false;
+    this.router.navigate(['/login']);
+  }
+
   isAuthenticated() {
     return this._isLogged;
   }
