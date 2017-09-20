@@ -40,5 +40,6 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   onSubmit(form) {
     this._service.update(form.value)
     form.form.reset();
+    this._router.navigate(['/dashboard/list-product']);
   }
 }

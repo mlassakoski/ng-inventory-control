@@ -15,14 +15,18 @@ export class ProductService {
   private _headers: Headers;
   private _products: Product[];
 
-  constructor(private http: Http) {
+  constructor(private _http: Http) {
     this._headers = new Headers();
     this._headers.append('Content-Type', 'application/json');
     this.initList();
   }
 
-  getProductList(): Product[] {
+  getProductList() {
     return this._products;
+  }
+
+  addProduct(product) {
+
   }
 
   getProduct(id: number) {

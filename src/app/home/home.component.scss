@@ -1,0 +1,17 @@
+.card {
+  height: 10rem;
+  max-height: rem;
+  .card-action {
+    a {
+      color: #26a69a !important;
+      font-weight: bold;
+    }
+  }
+  .card-icon {
+    width: 7rem;
+    background: #eee;
+    i {
+      margin: auto;
+    }
+  }
+}

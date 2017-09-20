@@ -17,7 +17,7 @@ import { ProfileComponent } from './profile/profile.component';
     {
       path: 'dashboard', component: DashboardComponent,
       canLoad: [AuthGuard],
-      canActivateChild: [AuthGuard],
+      // canActivateChild: [AuthGuard],
       children: [
         { path: '', component: HomeComponent },
         { path: 'profile', component: ProfileComponent },
