@@ -22,7 +22,7 @@
         <td>{{product?.stock}}</td>
         <td>{{product?.price}}</td>
         <td>{{getTotalPrice(product)}}</td>
-        <td class="list-btn"><a [routerLink]="['/dashboard/new-product', product?.id]"><i class="material-icons">edit</i></a></td>
+        <td class="list-btn"><a [routerLink]="['/product', product?.id]"><i class="material-icons">edit</i></a></td>
         <td class="list-btn"><a (click)="remove(product?.id)"><i class="material-icons">delete</i></a></td>
       </tr>
     </tbody>
@@ -36,5 +36,5 @@
       <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
     </ul>
   </div>
-  <a [routerLink]="['/dashboard/new-product']" class="btn-floating btn-large waves-effect waves-light right"><i class="material-icons">add</i></a>
+  <a [routerLink]="['/product/new']" class="btn-floating btn-large waves-effect waves-light right"><i class="material-icons">add</i></a>
 </div>

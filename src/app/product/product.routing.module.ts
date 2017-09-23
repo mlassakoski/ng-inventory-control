@@ -8,7 +8,7 @@ const alunosRoutes = [
   { path: '', redirectTo: 'overview', pathMatch: 'full' },
   { path: 'list', component: ProductListComponent },
   { path: 'new', component: ProductFormComponent },
-  { path: ':id/edit', component: ProductFormComponent }
+  { path: ':id', component: ProductFormComponent }
 ];
 
 @NgModule({

@@ -6,33 +6,33 @@
       <div class="row">
         <div class="input-field col s6">
           <input id="name" type="text" name="name" [(ngModel)]="product.name" class="validate" />
-          <label for="name">Name</label>
+          <label [class.active]="product.name" for="name">Name</label>
         </div>
 
         <div class="input-field col s6">
           <input id="code" name="code" type="text" [(ngModel)]="product.code" class="validate" />
-          <label for="code">Code</label>
+          <label [class.active]="product.code" for="code">Code</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <textarea id="description" name="description" [(ngModel)]="product.description" class="materialize-textarea"></textarea>
-          <label for="description">Description</label>
+          <label [class.active]="product.description" for="description">Description</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
           <input id="price" name="price" type="text" [(ngModel)]="product.price" class="validate" />
-          <label for="price">Price</label>
+          <label [class.active]="product.price" for="price">Price</label>
         </div>
       </div>
 
       <div>
-        <button class="btn waves-effect waves-light right" type="submit" name="submit">Submit
+        <button class="btn waves-effect waves-light right" type="submit" name="submit">Save
           <i class="material-icons right">send</i>
         </button>
 
-        <button [routerLink]="['/dashboard/list-product']" class="btn waves-effect waves-light right" name="cancel">Cancel
+        <button [routerLink]="['/product/list']" class="btn waves-effect waves-light right" name="cancel">Back
             <i class="material-icons left">cancel</i>
           </button>
       </div>

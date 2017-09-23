@@ -1,3 +1,36 @@
-<p>
-  people-list works!
-</p>
+<div class="container">
+  <div class="table-list">
+    <h3 class="center">People</h3>
+
+    <table class="striped">
+      <thead>
+        <tr class="row">
+          <th>Name</th>
+          <th>Last Name</th>
+          <th>Status</th>
+          <th>Edit</th>
+          <th>remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user?.name}}</td>
+          <td>{{user?.lastName}}</td>
+          <td>{{user?.status}}</td>
+          <td class="list-btn"><a [routerLink]="['/people', user?.id]"><i class="material-icons">edit</i></a></td>
+          <td class="list-btn"><a (click)="remove(user?.id)"><i class="material-icons">delete</i></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect "><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+      </ul>
+    </div>
+    <a [routerLink]="['/people/new']" class="btn-floating btn-large waves-effect waves-light right"><i class="material-icons">add</i></a>
+  </div>
+</div>

@@ -24,10 +24,10 @@ import { ProfileComponent } from './profile/profile.component';
         {
           path: 'people',
           loadChildren: './people/people.module#PeopleModule'
-        }
+        },
+        { path: 'profile', component: ProfileComponent },
       ]
     },
-    // { path: 'profile', component: ProfileComponent },
     { path: '**', redirectTo: '' },
   ],
     {

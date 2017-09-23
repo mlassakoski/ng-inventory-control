@@ -12,6 +12,7 @@ import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './login/auth.service';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
@@ -30,6 +31,7 @@ import 'rxjs/add/operator/catch';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,
