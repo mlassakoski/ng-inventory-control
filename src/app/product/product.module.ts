@@ -5,13 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from './product.service';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductFormComponent } from './product-form/product-form.component';
-import { AppRoutingModule } from '../app.routing.module';
+import { ProductRoutingModule } from './product.routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ProductRoutingModule
   ],
   declarations: [
     ProductFormComponent,
@@ -20,9 +20,6 @@ import { AppRoutingModule } from '../app.routing.module';
   providers: [
     ProductService
   ],
-  exports: [
-    ProductFormComponent,
-    ProductListComponent
-  ]
+  exports: []
 })
 export class ProductModule {}

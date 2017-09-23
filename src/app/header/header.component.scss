@@ -15,9 +15,14 @@ nav {
   }
 }
 
+.collapsible-header {
+  padding: 0 32px !important;
+}
+
 .logout {
   color: red;
 }
+
 .dropdown-content {
   background-color: #FFFFFF;
   display: none;

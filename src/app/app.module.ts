@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { ProductModule } from './product/product.module';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './login/auth.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
 
 @NgModule({
   declarations: [
@@ -20,15 +22,14 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     HeaderComponent,
     LoginComponent,
-    DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    ProductModule
   ],
   providers: [
     AuthService,

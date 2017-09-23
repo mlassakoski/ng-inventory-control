@@ -25,6 +25,10 @@ export class HeaderComponent implements OnInit {
       alignment: 'right'
     }
   );
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
   }
 
   logout() {
