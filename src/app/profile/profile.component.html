@@ -11,30 +11,42 @@
         </li>
       </ul>
     </div>
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div>
-        <button [routerLink]="['/dashboard/list-product']" class="btn waves-effect waves-light right" type="submit" name="submit">Submit
-          <i class="material-icons right">send</i>
-        </button>
 
-        <button [routerLink]="['/dashboard/list-product']" class="btn waves-effect waves-light right" name="cancel">Cancel
-            <i class="material-icons left">cancel</i>
+    <form [formGroup]="form" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" [(ngModel)]="user.name" formControlName="name" class="validate">
+          <label [class.active]="user.name" for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" [(ngModel)]="user.lastName" formControlName="lastName" class="validate">
+          <label [class.active]="user.lastName" for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="email" type="email" [(ngModel)]="user.email" formControlName="email" class="validate">
+          <label [class.active]="user.email" for="email">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="birthDate" type="text" class="datepicker" [(ngModel)]="user.birthDate" formControlName="birthDate">
+          <label [class.active]="user.birthDate" for="birthDate">Birth Data</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <input id="password" type="password" [(ngModel)]="user.password" formControlName="password" class="validate">
+          <label [class.active]="user.password" for="password">Password</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="confPassword" type="password" class="validate">
+          <label [class.active]="user.confPassword" for="password">Confirm Password</label>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn waves-effect waves-light right" (click)="update()" name="submit">Update
+              <i class="material-icons right">send</i>
           </button>
       </div>
     </form>

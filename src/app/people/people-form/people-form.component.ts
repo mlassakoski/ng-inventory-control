@@ -21,8 +21,6 @@ export class PeopleFormComponent implements OnInit {
     { value: 'USER', label: 'User' },
     { value: 'ADMIN', label: 'Admin' }
   ]
-  options: Array<any>;
-  mySelectValue: Array<string>;
 
   constructor(private _service: PeopleService,
     private formBuilder: FormBuilder,
@@ -49,9 +47,6 @@ export class PeopleFormComponent implements OnInit {
       profile: [null, Validators.required],
       status: [null, Validators.required]
     });
-
-    this.mySelectValue = ['b', 'c'];
-
 
     $(document).ready(function () {
       $('select').material_select();

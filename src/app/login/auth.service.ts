@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   login(user: User): Observable<User> {
-    return this.http.post('http://localhost:8081/api/user/authenticate', JSON.stringify(user),  { headers: this._headers })
+    return this.http.post('http://localhost:8081/api/user/authenticate', JSON.stringify(user), { headers: this._headers })
       .map((res) => {
         const loggedUser = res.json();
         if (user) {
@@ -27,6 +27,11 @@ export class AuthService {
 
         return loggedUser;
       });
+  }
+
+  getUser(): User {
+    const user = localStorage.getItem('currentUser')
+    return JSON.parse(user);
   }
 
   logout() {
