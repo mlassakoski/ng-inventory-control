@@ -14,15 +14,15 @@ export class ProductListComponent implements OnInit {
   constructor(private _service: ProductService) { }
 
   ngOnInit() {
-    this.products = this._service.getProductList();
+    this._service.getProductList()
+      .subscribe(data => {
+        this.products = data;
+      }, err => {
+        console.log(err);
+      })
   }
 
-  getTotalPrice(product: Product) {
-    return product.price * product.stock;
-  }
 
   remove(id: number) {
-    this._service.remove(id);
-    this.products = this._service.getProductList();
   }
 }

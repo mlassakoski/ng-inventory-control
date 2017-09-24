@@ -1,8 +1,8 @@
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { PeopleFormComponent } from './people-form/people-form.component';
 import { PeopleListComponent } from './people-list/people-list.component';
-import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [RouterModule.forChild(

@@ -1,9 +1,9 @@
-import { Subscription } from 'rxjs/Rx';
-import { Router, ActivatedRoute } from '@angular/router';
-import { User } from './../../login/user';
-import { PeopleService } from './../people.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
+import { User } from './../../login/user';
+import { PeopleService } from './../people.service';
 declare var $: any;
 
 @Component({

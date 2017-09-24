@@ -8,17 +8,18 @@
           <th>Name</th>
           <th>Last Name</th>
           <th>Status</th>
-          <th>Edit</th>
-          <th>remove</th>
+          <th class="center">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of users">
-          <td>{{user?.name}}</td>
-          <td>{{user?.lastName}}</td>
-          <td>{{user?.status}}</td>
-          <td class="list-btn"><a [routerLink]="['/people', user?.id]"><i class="material-icons">edit</i></a></td>
-          <td class="list-btn"><a (click)="remove(user?.id)"><i class="material-icons">delete</i></a></td>
+          <td width="30%">{{user?.name}}</td>
+          <td width="40%">{{user?.lastName}}</td>
+          <td width="20%">{{user?.status}}</td>
+          <td width="10%" class="list-btn center">
+            <a [routerLink]="['/people', user?.id]"><i class="material-icons">edit</i></a>
+            <a [routerLink]="['/people', user?.id]"><i class="material-icons">delete</i></a>
+          </td>
         </tr>
       </tbody>
     </table>

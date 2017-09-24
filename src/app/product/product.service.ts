@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 
 import { Product } from './product-list/product';
-import { Observable } from 'rxjs/Rx';
 import * as _ from 'lodash';
 
 @Injectable()
@@ -10,74 +10,40 @@ export class ProductService {
 
   private _url: string;
   private _headers: Headers;
-  private _products: Product[];
 
   constructor(private _http: Http) {
+    this._url = 'http://localHost:8081/api';
     this._headers = new Headers();
     this._headers.append('Content-Type', 'application/json');
-    this.initList();
   }
 
   getProductList() {
-    return this._products;
+    return this._http.get(`${this._url}/product`, { headers: this._headers })
+      .map(res => res.json());
   }
 
-  addProduct(product) {
-
+  addProduct(product: Product) {
+    return this._http.post(`${this._url}/product`, JSON.stringify(product), { headers: this._headers })
+      .map(res => res.json());
   }
 
   getProduct(id: number) {
-    for (let i = 0; i < this._products.length; i++) {
-      const product = this._products[i];
-      if (product.id == id) {
-        return product;
-      }
-    }
-    return null;
+    return this._http.get(`${this._url}/product/${id}`, { headers: this._headers })
+      .map(res => res.json());
   }
 
   update(product: Product) {
-    _.assign(this._products, product);
+    return this._http.put(`${this._url}/product`, JSON.stringify(product), { headers: this._headers })
+      .map(res => res.json());
   }
 
   remove(id: number) {
-    this._products = _.reject(this._products, { 'id': id });
+    return this._http.delete(`${this._url}/product/${id}`, { headers: this._headers })
+      .map(res => res.json());
   }
 
-  initList() {
-    this._products = [
-      {
-        'id': 1,
-        'code': 123,
-        'name': 'notebook',
-        'description': '',
-        'price': 22.5,
-        'stock': 20
-      },
-      {
-        'id': 2,
-        'code': 125,
-        'name': 'pencil',
-        'description': '',
-        'price': 2.5,
-        'stock': 25
-      },
-      {
-        'id': 3,
-        'code': 125,
-        'name': 'pen',
-        'description': '',
-        'price': 22.5,
-        'stock': 32
-      },
-      {
-        'id': 4,
-        'code': 127,
-        'name': 'backpack',
-        'description': '',
-        'price': 52,
-        'stock': 7
-      }
-    ];
+  getCategories() {
+    return this._http.get(`${this._url}/product/category`, { headers: this._headers })
+      .map(res => res.json());
   }
 }

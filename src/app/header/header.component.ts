@@ -24,11 +24,11 @@ export class HeaderComponent implements OnInit {
       belowOrigin: true,
       alignment: 'right'
     }
-  );
+    );
 
-  $(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
+    $(document).ready(function () {
+      $('.collapsible').collapsible();
+    });
   }
 
   logout() {

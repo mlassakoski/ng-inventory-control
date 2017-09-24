@@ -9,7 +9,6 @@
         <th class="hide-on-small-only">Description</th>
         <th>Stock</th>
         <th>Price</th>
-        <th>Total Price</th>
         <th>Edit</th>
         <th>remove</th>
       </tr>
@@ -21,7 +20,6 @@
         <td class="hide-on-small-only">{{product?.description}}</td>
         <td>{{product?.stock}}</td>
         <td>{{product?.price}}</td>
-        <td>{{getTotalPrice(product)}}</td>
         <td class="list-btn"><a [routerLink]="['/product', product?.id]"><i class="material-icons">edit</i></a></td>
         <td class="list-btn"><a (click)="remove(product?.id)"><i class="material-icons">delete</i></a></td>
       </tr>
